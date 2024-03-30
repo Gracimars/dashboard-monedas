@@ -1,19 +1,58 @@
 body {
 	font-family: Arial, Helvetica, sans-serif;
+	color: antiquewhite;
+	background-color: #0d1620;
 }
 
-table {
-	width: 100%;
-	border-collapse: collapse;
+.grid-container {
+	background: #4eb1a4;
+	border: 3px solid black;
+	border-radius: 10px;
+	display: grid;
+	grid-template-areas:
+		"headerPosition headerNickname headerCoins"
+		"positionData nicknameData coinsData"
+		"positionData nicknameData coinsData"
+		"positionData nicknameData coinsData"
+		"positionData nicknameData coinsData"
+		"positionData nicknameData coinsData"
+		"positionData nicknameData coinsData"
+		"positionData nicknameData coinsData"
+		"positionData nicknameData coinsData"
+		"positionData nicknameData coinsData"
+		"positionData nicknameData coinsData"
+		"positionData nicknameData coinsData"
+		"positionData nicknameData coinsData"
+		"positionData nicknameData coinsData";
+	gap: 5px;
 }
 
-th,
-td {
-	padding: 8px;
-	text-align: left;
-	border-bottom: 1px solid #ddd;
+.grid-container div {
+	background: #0d1620;
+	border: 2px solid #f5982f;
+	border-radius: 6px;
 }
 
-th {
-	background-color: #f2f2f2;
+.position {
+	grid-area: positionData;
+}
+
+.nickname {
+	grid-area: nicknameData;
+}
+
+.coins {
+	grid-area: coinsData;
+}
+
+.header-position {
+	grid-area: headerPosition;
+}
+
+.header-nickname {
+	grid-area: headerNickname;
+}
+
+.header-coins {
+	grid-area: headerCoins;
 }
