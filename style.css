@@ -21,6 +21,31 @@ body {
 		"position nickname coins";
 	gap: 5px;
 }
+
+.header-position {
+	grid-area: headerPosition;
+}
+
+.header-nickname {
+	grid-area: headerNickname;
+}
+
+.header-coins {
+	grid-area: headerCoins;
+}
+
+.position {
+	grid-area: position;
+}
+
+.nickname {
+	grid-area: nickname;
+}
+
+.coins {
+	grid-area: coins;
+}
+
 .grid-container div {
 	background: #0d1620;
 	border: 2px solid #f5982f;
