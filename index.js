@@ -5,39 +5,39 @@ const leaderboardDataContainer = document.getElementById("grid-container");
 */
 
 fetch("data.json")
-	.then((response) => response.json())
-	/*se utiliza destructuring para extraer la propiedad leaderboardData 
+  .then((response) => response.json())
+  /*se utiliza destructuring para extraer la propiedad leaderboardData 
 	del objeto JSON. Esto nos proporciona directamente el array de datos que necesitamos.*/
 
-	.then(({leaderboardData}) => {
-		leaderboardData.forEach(function (item, index) {
-			const {nickname, coins} = item;
-			const position = index + 1;
+  .then(({ leaderboardData }) => {
+    leaderboardData.forEach(function (item, index) {
+      const { nickname, coins } = item;
+      const position = index + 1;
 
-			// Seleccionar los divs del encabezado
-			const positionHeader = document.querySelector(".header-position");
-			const nicknameHeader = document.querySelector(".header-nickname");
-			const coinsHeader = document.querySelector(".header-coins");
+      // Seleccionar los divs del encabezado
+      const positionHeader = document.querySelector(".header-position");
+      const nicknameHeader = document.querySelector(".header-nickname");
+      const coinsHeader = document.querySelector(".header-coins");
 
-			// Crear los divs para cada dato y sus clases
+      // Crear los divs para cada dato y sus clases
 
-			const positionDiv = document.createElement("div");
-			positionDiv.textContent = position.toString().padStart(2, "0");
-			positionDiv.classList.add("position");
+      const positionDiv = document.createElement("div");
+      positionDiv.textContent = position.toString().padStart(2, "0");
+      positionDiv.classList.add("position");
 
-			const nicknameDiv = document.createElement("div");
-			nicknameDiv.textContent = nickname;
-			nicknameDiv.classList.add("nickname");
+      const nicknameDiv = document.createElement("div");
+      nicknameDiv.textContent = nickname;
+      nicknameDiv.classList.add("nickname");
 
-			const coinsDiv = document.createElement("div");
-			coinsDiv.textContent = coins;
-			coinsDiv.classList.add("coins");
+      const coinsDiv = document.createElement("div");
+      coinsDiv.textContent = coins;
+      coinsDiv.classList.add("coins");
 
-			// Agregar los divs de datos a los encabezados correspondientes
+      // Agregar los divs de datos a los encabezados correspondientes
 
-			positionHeader.appendChild(positionDiv);
-			nicknameHeader.appendChild(nicknameDiv);
-			coinsHeader.appendChild(coinsDiv);
-		});
-	})
-	.catch((error) => console.error("Error fetching data:", error));
+      positionHeader.appendChild(positionDiv);
+      nicknameHeader.appendChild(nicknameDiv);
+      coinsHeader.appendChild(coinsDiv);
+    });
+  })
+  .catch((error) => console.error("Error fetching data:", error));

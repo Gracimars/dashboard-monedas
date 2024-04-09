@@ -1,54 +1,54 @@
 body {
-	font-family: Arial, Helvetica, sans-serif;
-	color: antiquewhite;
-	background-color: #0d1620;
+  font-family: Arial, Helvetica, sans-serif;
+  color: antiquewhite;
+  background-color: #0d1620;
 }
 
 body {
-	font-family: Arial, Helvetica, sans-serif;
-	color: antiquewhite;
-	background-color: #0d1620;
+  font-family: Arial, Helvetica, sans-serif;
+  color: antiquewhite;
+  background-color: #0d1620;
 }
 
 .grid-container {
-	background: #4eb1a4;
-	border: 3px solid black;
-	border-radius: 10px;
-	display: grid;
-	padding: 3px;
-	grid-template-areas:
-		"headerPosition headerNickname headerCoins"
-		"position nickname coins";
-	gap: 5px;
+  background: #4eb1a4;
+  border: 3px solid black;
+  border-radius: 10px;
+  display: grid;
+  padding: 3px;
+  grid-template-areas:
+    "headerPosition headerNickname headerCoins"
+    "position nickname coins";
+  gap: 5px;
 }
 
 .header-position {
-	grid-area: headerPosition;
+  grid-area: headerPosition;
 }
 
 .header-nickname {
-	grid-area: headerNickname;
+  grid-area: headerNickname;
 }
 
 .header-coins {
-	grid-area: headerCoins;
+  grid-area: headerCoins;
 }
 
 .position {
-	grid-area: position;
+  grid-area: position;
 }
 
 .nickname {
-	grid-area: nickname;
+  grid-area: nickname;
 }
 
 .coins {
-	grid-area: coins;
+  grid-area: coins;
 }
 
 .grid-container div {
-	background: #0d1620;
-	border: 2px solid #f5982f;
-	border-radius: 6px;
-	padding: 5px;
+  background: #0d1620;
+  border: 2px solid #f5982f;
+  border-radius: 6px;
+  padding: 5px;
 }
