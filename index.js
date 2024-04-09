@@ -6,29 +6,38 @@ const leaderboardDataContainer = document.getElementById("grid-container");
 
 fetch("data.json")
 	.then((response) => response.json())
-	.then((data) => {
-		/* console.log(data); */
-		const leaderboardData = data.leaderboardData;
+	/*se utiliza destructuring para extraer la propiedad leaderboardData 
+	del objeto JSON. Esto nos proporciona directamente el array de datos que necesitamos.*/
 
-		// Procesar los datos del JSON:
-		//   - `.then(data => { ... })`: Esta función se ejecuta después de que el JSON se ha convertido a un objeto JavaScript.
-		//     - `data`: Representa el objeto JavaScript que contiene la información del JSON.
-		//     - `const leaderboardData = data.leaderboardData;`: Se guarda el array con la información de los usuarios (que está dentro del objeto `data`) en la variable `leaderboardData`.
-
-		leaderboardData.forEach((item, index) => {
+	.then(({leaderboardData}) => {
+		leaderboardData.forEach(function (item, index) {
+			const {nickname, coins} = item;
 			const position = index + 1;
-			const nickname = item.nickname;
-			const coins = item.coins;
 
-			// Seleccionar los elementos correspondientes dentro de los contenedores
-			const positionElements = document.querySelectorAll(".header-position .position");
-			const nicknameElements = document.querySelectorAll(".header-nickname .nickname");
-			const coinsElements = document.querySelectorAll(".header-coins .coins");
+			// Seleccionar los divs del encabezado
+			const positionHeader = document.querySelector(".header-position");
+			const nicknameHeader = document.querySelector(".header-nickname");
+			const coinsHeader = document.querySelector(".header-coins");
 
-			// Asignar valores a los elementos correspondientes
-			positionElements[index].textContent = position.toString().padStart(2, "0");
-			nicknameElements[index].textContent = nickname;
-			coinsElements[index].textContent = coins;
+			// Crear los divs para cada dato y sus clases
+
+			const positionDiv = document.createElement("div");
+			positionDiv.textContent = position.toString().padStart(2, "0");
+			positionDiv.classList.add("position");
+
+			const nicknameDiv = document.createElement("div");
+			nicknameDiv.textContent = nickname;
+			nicknameDiv.classList.add("nickname");
+
+			const coinsDiv = document.createElement("div");
+			coinsDiv.textContent = coins;
+			coinsDiv.classList.add("coins");
+
+			// Agregar los divs de datos a los encabezados correspondientes
+
+			positionHeader.appendChild(positionDiv);
+			nicknameHeader.appendChild(nicknameDiv);
+			coinsHeader.appendChild(coinsDiv);
 		});
 	})
 	.catch((error) => console.error("Error fetching data:", error));
